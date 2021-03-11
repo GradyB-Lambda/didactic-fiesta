@@ -13,6 +13,10 @@ if(process.env.NODE_ENV === 'production'){
     server.use(cors())
 }
 
+server.use('*', (req,res) => {
+    res.send(`<h1>Working!!!!!!!!</h2>`)
+})
+
 const PORT = process.env.PORT || 1234
 
 server.listen(PORT, () => {console.log(`listening on ${PORT}`)})
